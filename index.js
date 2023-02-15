@@ -105,8 +105,17 @@ bot.on("text", (ctx) => {
 
     if(ctx.update.message.text === "BunsenLabs"){
         menu = 9
-        ctx.replyWithHTML("<b>Windows 11</b>", Markup.keyboard([
+        ctx.replyWithHTML("<b>Bunsen Labs</b>", Markup.keyboard([
             ["X86", "amd64"],
+            ["🔙 Orqaga", "🔝 Asosiy menyu"]
+        ]).resize())
+    }
+
+
+    if(ctx.update.message.text === "Fedora"){
+        menu = 9
+        ctx.replyWithHTML("<b>Fedora</b>", Markup.keyboard([
+            ["IoT", "Workstation"],
             ["🔙 Orqaga", "🔝 Asosiy menyu"]
         ]).resize())
     }
@@ -422,6 +431,31 @@ bot.on("text", (ctx) => {
 
     if(ctx.update.message.text === "Bodhi Linux"){
         ctx.replyWithPhoto("https://i.imgur.com/Gothr.jpg") && ctx.replyWithDocument({source: "./docs/bodhi.txt"})
+    }
+
+
+    if(ctx.update.message.text === "Xubuntu"){
+        ctx.replyWithPhoto("https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Xubuntu_logo.svg/2048px-Xubuntu_logo.svg.png") && ctx.replyWithDocument({source: "./docs/xubuntu.txt"})
+    }
+
+
+    if(ctx.update.message.text === "IoT"){
+        ctx.replyWithPhoto("https://cutewallpaper.org/21/fedora-linux-wallpaper/Fedora-Linux-Wallpapers-by-mylittledemons-on-DeviantArt.png") && ctx.replyWithDocument({source: "./docs/iot.txt"})
+    }
+
+
+    if(ctx.update.message.text === "Workstation"){
+        ctx.replyWithPhoto("https://www.linuxed.net/wp-content/uploads/2018/12/fedora-1280x720.png") && ctx.replyWithDocument({source: "./docs/workstation.txt"})
+    }
+
+
+    if(ctx.update.message.text === "Zorin Linux"){
+        ctx.replyWithPhoto("https://img.wallpapersafari.com/desktop/1920/1080/34/27/bmxPuK.png") && ctx.replyWithDocument({source: "./docs/zorin.txt"})
+    }
+
+
+    if(ctx.update.message.text === "PCLinuxOS"){
+        ctx.replyWithPhoto("https://mydistroreview.com/wp-content/uploads/2019/06/PCLinuxOSDesktop.jpg") && ctx.replyWithDocument({source: "./docs/pclinuxos.txt"})
     }
 
 
