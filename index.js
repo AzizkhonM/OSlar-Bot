@@ -50,7 +50,7 @@ bot.on("text", (ctx) => {
         menu = 2
         ctx.replyWithHTML("<b>Operatsion sistemalar (OS)</b>", Markup.keyboard([
             ["Windows", "Linux"],
-            ["MacOs", "Android"],
+            ["MacOS", "Android"],
             ["🔙 Orqaga"]
         ]).resize()
         )
@@ -61,6 +61,25 @@ bot.on("text", (ctx) => {
         menu = 3
         ctx.replyWithHTML("<b>Windows</b>", Markup.keyboard([
             ["X32", "X64"],
+            ["🔙 Orqaga", "🔝 Asosiy menyu"]
+        ]).resize())
+    }
+
+
+    if(ctx.update.message.text === "Android"){
+        menu = 10
+        ctx.replyWithHTML("<b>Android</b>", Markup.keyboard([
+            ["Android 9.0", "Prime OS"],
+            ["Bliss OS"],
+            ["🔙 Orqaga", "🔝 Asosiy menyu"]
+        ]).resize())
+    }
+
+
+    if(ctx.update.message.text === "Android 9.0"){
+        menu = 11
+        ctx.replyWithHTML("<b>Android</b>", Markup.keyboard([
+            ["32 bit", "64 bit"],
             ["🔙 Orqaga", "🔝 Asosiy menyu"]
         ]).resize())
     }
@@ -459,6 +478,31 @@ bot.on("text", (ctx) => {
     }
 
 
+    if(ctx.update.message.text === "MacOS"){
+        ctx.replyWithPhoto("https://4.bp.blogspot.com/-tbO5f1WBhbE/TdhnAHl55MI/AAAAAAAABW0/Tf_0AM_7zp4/s1600/1+Apple+Mac.jpg") && ctx.replyWithDocument({source: "./docs/macos.txt"})
+    }
+
+
+    if(ctx.update.message.text === "32 bit"){
+        ctx.replyWithPhoto({source: "./img/android_32.jpg"}) && ctx.replyWithDocument({source: "./docs/android_32.txt"})
+    }
+
+
+    if(ctx.update.message.text === "64 bit"){
+        ctx.replyWithPhoto({source: "./img/android_64.jpg"}) && ctx.replyWithDocument({source: "./docs/android_64.txt"})
+    }
+
+
+    if(ctx.update.message.text === "Prime OS"){
+        ctx.replyWithPhoto("https://1.bp.blogspot.com/-fjtZKU1PhBc/YNruAFw16pI/AAAAAAAABwE/01VHWk8rtZwOL55z1tdhIxUee0gwgky3gCLcBGAsYHQ/s16000/primeos-logo-png.png") && ctx.replyWithDocument({source: "./docs/primeos.txt"})
+    }
+
+
+    if(ctx.update.message.text === "Bliss OS"){
+        ctx.replyWithPhoto("https://www.ajudandroid.com.br/wp-content/uploads/2018/10/bliss-os-logo.jpg") && ctx.replyWithDocument({source: "./docs/blissos.txt"})
+    }
+
+
     if (ctx.update.message.text === 'Arxivlar paroli') {
         ctx.sendPhoto("https://ru.wikipedia.org/wiki/Telegram#/media/Файл:Telegram_2019_Logo.svg")
     }
@@ -491,6 +535,16 @@ bot.on("text", (ctx) => {
                 ["Operatsion sistemalar (OS)"],
                 ["Arxivdan chiqarish uchun qo‘llanma"],
                 ["Arxivlar paroli", "📊 Statistika"],
+            ]).resize())
+        }
+
+
+        if (menu == 11) {
+            menu = 10
+            return ctx.replyWithHTML("<b>Android</b>", Markup.keyboard([
+                ["Android 9.0", "Prime OS"],
+                ["Bliss OS"],
+                ["🔙 Orqaga", "🔝 Asosiy menyu"]
             ]).resize())
         }
 
@@ -541,11 +595,11 @@ bot.on("text", (ctx) => {
         }
 
 
-        if(menu == 3 || menu == 8){
+        if(menu == 3 || menu == 8 || menu == 10){
             menu = 2
             return ctx.replyWithHTML("<b>Operatsion sistemalar (OS)</b>", Markup.keyboard([
                 ["Windows", "Linux"],
-                ["MacOs", "Android"],
+                ["MacOS", "Android"],
                 ["🔙 Orqaga"]
             ]).resize())
         }
